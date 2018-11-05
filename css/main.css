@@ -150,9 +150,12 @@ img {
     border-radius:10px;
 }
 .modal-content {
-  background-color:black !important;
+  background-color:rgba(0, 0, 0, 0.7);
   border:2px solid white !important;
   color:white !important;
+}
+#divBody {
+  background-color:rgba(0, 0, 0, 0.7);
 }
 .modal-head {
   padding-right:10px;
@@ -180,7 +183,6 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
-    font-family:'Montserrat';
 }
 body {
     margin: 0 auto;
@@ -278,10 +280,16 @@ body {
     float: left;
     color: #999;
 }
-
+ul {
+  padding:0;
+}
+#logo {
+  filter:invert();
+  width:50px;
+}
 /*  END OF BOT CODE  */
 html {
-  font-family: 'Montserrat';
+  font-family: 'Rubik', 'Arial';
   color: #222;
   font-size: 1em;
   line-height: 1.4; }
