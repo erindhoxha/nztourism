@@ -415,14 +415,15 @@ $(document).on('hidden.bs.modal', '.modal', function () {
     //First Statement
     $(".container-empty").addClass("container");
     $(".container-empty").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble + '</span>');
-    $(".container-empty").append("<img src='img/bot.png' alt='Avatar' style='width:100%;'>");
-    $(".container-empty").append('<p>For how many people do you need the transport?</p>');
-    $(".container-empty").append('<button value="1" type="submit" class="button-transport" id="sendOne">1</button>');
-    $(".container-empty").append('<button value="2" type="submit" class="button-transport" id="sendOne">2</button>');
-    $(".container-empty").append('<button value="3" type="submit" class="button-transport" id="sendOne">3</button>');
-    $(".container-empty").append('<button value="4" type="submit" class="button-transport" id="sendOne">4</button>');
-    $(".container-empty").append('<button value="5" type="submit" class="button-transport" id="sendOne">5</button>');
-    $(".container-empty").append('<button value="6" type="submit" class="button-transport" id="sendOne">6</button>');
+    $(".container-empty").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
+    $(".container-empty").append('<p class="bot-conversation">For how many people do you need the transport?</p>');
+    $(".container-empty").append("<div id='btn-box'>");
+    $("#btn-box").append('<button value="1" type="submit" class="button-transport" id="sendOne">1</button>');
+    $("#btn-box").append('<button value="2" type="submit" class="button-transport" id="sendOne">2</button>');
+    $("#btn-box").append('<button value="3" type="submit" class="button-transport" id="sendOne">3</button>');
+    $("#btn-box").append('<button value="4" type="submit" class="button-transport" id="sendOne">4</button>');
+    $("#btn-box").append('<button value="5" type="submit" class="button-transport" id="sendOne">5</button>');
+    $("#btn-box").append('<button value="6" type="submit" class="button-transport" id="sendOne">6</button>');
 
 
 
@@ -447,7 +448,7 @@ function funct(e) {
         $(".button-transport").hide();
         $(".container-empty-two").addClass("container mt-2");
         $(".container-empty-two").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble + '</span>');
-        $(".container-empty-two").append("<img src='img/bot.png' alt='Avatar' style='width:100%;'>");
+        $(".container-empty-two").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
         $(".container-empty-two").append('<p>Sweet, you\'ve chosen: ' + this.value + ' people' + '.</p>');
         $(".container-empty-two").append('<p>How many days do you wish to stay?');
         $(".container-empty-two").append('<div class="slidercontainer">');
@@ -475,7 +476,7 @@ function funct(e) {
         $("#myRange").hide(300);
         $(".container-empty-three").addClass("container mt-2");
         $(".container-empty-three").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble  + '</span>');
-        $(".container-empty-three").append("<img src='img/bot.png' alt='Avatar' style='width:100%;'>");
+        $(".container-empty-three").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
         $(".container-empty-three").append('<p id="answer-text">Cool, ' + secondAnswer + ' days for ' + firstAnswer + ' people.</p>');
         $(".container-empty-three").append('<p id="answer-text-two">I\'m suggesting you to go for:</p>');
 
