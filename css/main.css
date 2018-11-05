@@ -9,11 +9,22 @@
    ========================================================================== */
 
    /* START OF BOT CODE */
-
-   .text-center {
+.bot-conversation {
+  float:left;
+  margin-top:10px;
+}
+#btn-box {
+  clear:both;
+}
+#p-text-people, #p-text {
+  clear:both;
+}
+.text-center {
     text-align:center;
 }
-
+.invert {
+  filter:invert();
+}
 .container-body {
     height:100%;
     padding:20px;
@@ -31,7 +42,7 @@
     height: 25px; /* Specified height */
     background: #fff; /* Grey background */
     outline: none; /* Remove outline */
-    opacity: 0.3; /* Set transparency (for mouse-over effects on hover) */
+    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
     border-radius:20px;
@@ -49,13 +60,13 @@ img {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
+    width: 35px; /* Set a specific slider handle width */
+    height: 35px; /* Slider handle height */
     background: #000;
+    border: 3px solid #76b2b7;
     cursor: pointer; /* Cursor on hover */
     border-radius:50%;
 }
-
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
@@ -144,7 +155,7 @@ img {
     transition:0.2s;
     margin:0;
     text-align:center;
-    margin-top:45px;
+    margin-top:10px;
     background-color:transparent;
     border:1px solid white;
     border-radius:10px;
@@ -193,8 +204,8 @@ body {
     color:white;
     background-color:transparent;
     margin:3px;
-    width:40px;
-    height:40px;
+    width:35px;
+    height:35px;
 }
 .button-transport:hover {
     background-color:white;
