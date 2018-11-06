@@ -774,11 +774,21 @@ $(".button-accommodation").on('click', function() {
         secondAnswer = parseInt(document.getElementById('p-text').innerHTML)
         $("#btn-submit").hide(300);
         $("#myRange").hide(300);
-        $(".container-accommodation2").addClass("container mt-2");
-        $(".container-accommodation2").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble  + '</span>');
-        $(".container-accommodation2").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
-        $(".container-accommodation2").append('<p id="answer-text" class="bot-conversation">Cool, ' + secondAnswer + ' days for ' + firstAnswer + ' people.</p>');
-        $(".container-accommodation2").append('<p id="answer-text-two" class="bot-conversation">I\'m suggesting you to go for:</p>');
+        $(".container-accommodation3").addClass("container mt-2");
+        $(".container-accommodation3").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble  + '</span>');
+        $(".container-accommodation3").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
+        $(".container-accommodation3").append('<p id="answer-text" class="bot-conversation">Cool, ' + secondAnswer + ' days for ' + firstAnswer + ' people.</p>');
+        $(".container-accommodation3").append('<p id="answer-text-two" class="bot-conversation">I\'m suggesting you to go for:</p>');
+
+        $(".container-accommodation4").addClass("container mt-2 text-center");
+        $(".container-accommodation4").append('<div class="image-left">');
+        $(".image-left").append('<img id="motorbike-one" src="img/motorbike-one.jpeg">');   
+        $(".container-accommodation4").append('<div id="text-right">')
+        $("#text-right").append('<h3 id="header-text" style="margin:0">' + transport.Motorbike.name + '</h4>');
+        $("#text-right").append('<p id="p-1" style="margin:0">Price: $' + transport.Motorbike.Price + '/day</p>');
+        $("#text-right").append('<p id ="p-2" style="margin:0">Fuel: ' + transport.Motorbike.Fuel + '</p>');
+        $("#text-right").append('<button type="button" id="btn-hire">Hire</button>');
+
 });
 
 });
