@@ -85,6 +85,7 @@ var minutesDouble = (d.getMinutes()<10?'0':'') + d.getMinutes();
 var seconds = d.getSeconds(); 
 
 //First Statement
+
 $(".container-empty").addClass("container");
 $(".container-empty").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble + '</span>');
 $(".container-empty").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
@@ -101,7 +102,6 @@ var buttonAll = document.getElementsByClassName('button-transport');
 
 for (var i = 0; i < buttonAll.length; i++) {
     buttonAll[i].addEventListener('click', funct);
-
 }
 
 var firstAnswer;
@@ -722,5 +722,45 @@ function funct(e) {
         }
     }); 
 }
+});
 
-  });
+
+// ACCOMMODATION
+
+$(".container-empty-accommodation").addClass("container");
+$(".container-empty-accommodation").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble + '</span>');
+$(".container-empty-accommodation").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
+$(".container-empty-accommodation").append('<p class="bot-conversation">For how many people do you need the transport?</p>');
+$(".container-empty-accommodation").append("<div id='btn-box2'>");
+$("#btn-box2").append('<button value="1" type="submit" class="button-accommodation" id="sendOne">1</button>');
+$("#btn-box2").append('<button value="2" type="submit" class="button-accommodation" id="sendOne">2</button>');
+$("#btn-box2").append('<button value="3" type="submit" class="button-accommodation" id="sendOne">3</button>');
+$("#btn-box2").append('<button value="4" type="submit" class="button-accommodation" id="sendOne">4</button>');
+$("#btn-box2").append('<button value="5" type="submit" class="button-accommodation" id="sendOne">5</button>');
+$("#btn-box2").append('<button value="6" type="submit" class="button-accommodation" id="sendOne">6</button>');
+
+
+$(".button-accommodation").on('click', function() {
+    console.log(this.value);
+    $(".button-accommodation").hide();
+    $(".container-accommodation2").addClass("container mt-2");
+    $(".container-accommodation2").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble + '</span>');
+    $(".container-accommodation2").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
+    $(".container-accommodation2").append('<p class="bot-conversation">Sweet, you\'ve chosen: ' + this.value + ' people' + '.</p>');
+    $(".container-accommodation2").append('<p class="bot-conversation">How many days do you wish to stay?');
+    $(".container-accommodation2").append('<div class="slidercontainer">');
+    $(".slidercontainer").append('<input type="range" min="1" max="6" value="3" class="slider" id="myRange">');
+    $(".slidercontainer").append('<p id="p-text"></p>'); 
+    $("#p-text").html("5 days");
+    $(".container-accommodation2").append('<button id="btn-submit" type="submit">Submit</button>');  
+
+
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("p-text");
+    output.innerHTML = slider.value; // Display the default slider value
+    secondAnswer = parseInt(document.getElementById('p-text').innerHTML);
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+    output.innerHTML = this.value + ' days';
+    }
+});
