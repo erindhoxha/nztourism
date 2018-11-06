@@ -235,7 +235,7 @@ body {
     transition:0.3s;
     cursor:pointer;
 }
-#btn-submit {
+#btn-submit, #btn-submit2 {
     background-color:transparent;
     color:#fff;
     background-color:#76b2b7;

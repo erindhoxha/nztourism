@@ -741,6 +741,11 @@ $("#btn-box2").append('<button value="6" type="submit" class="button-accommodati
 
 
 $(".button-accommodation").on('click', function() {
+
+    $(".container-empty-accommodation").append('<p id="p-text-people"></p>'); 
+    var outputTextPeople = document.getElementById('p-text-people');
+    outputTextPeople.innerHTML = this.value + ' people';
+    var firstAnswer = this.value;
     console.log(this.value);
     $(".button-accommodation").hide();
     $(".container-accommodation2").addClass("container mt-2");
@@ -748,11 +753,11 @@ $(".button-accommodation").on('click', function() {
     $(".container-accommodation2").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
     $(".container-accommodation2").append('<p class="bot-conversation">Sweet, you\'ve chosen: ' + this.value + ' people' + '.</p>');
     $(".container-accommodation2").append('<p class="bot-conversation">How many days do you wish to stay?');
-    $(".container-accommodation2").append('<div class="slidercontainer">');
-    $(".slidercontainer").append('<input type="range" min="1" max="6" value="3" class="slider" id="myRange">');
-    $(".slidercontainer").append('<p id="p-text"></p>'); 
+    $(".container-accommodation2").append('<div class="slidercontainer2">');
+    $(".slidercontainer2").append('<input type="range" min="1" max="6" value="3" class="slider" id="myRange">');
+    $(".slidercontainer2").append('<p id="p-text"></p>'); 
     $("#p-text").html("5 days");
-    $(".container-accommodation2").append('<button id="btn-submit" type="submit">Submit</button>');  
+    $(".container-accommodation2").append('<button id="btn-submit2" type="submit">Submit</button>');  
 
 
     var slider = document.getElementById("myRange");
@@ -763,4 +768,17 @@ $(".button-accommodation").on('click', function() {
     slider.oninput = function() {
     output.innerHTML = this.value + ' days';
     }
+
+    $("#btn-submit2").on('click', function() {
+    $("#btn-submit2").hide();
+        secondAnswer = parseInt(document.getElementById('p-text').innerHTML)
+        $("#btn-submit").hide(300);
+        $("#myRange").hide(300);
+        $(".container-accommodation2").addClass("container mt-2");
+        $(".container-accommodation2").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble  + '</span>');
+        $(".container-accommodation2").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
+        $(".container-accommodation2").append('<p id="answer-text" class="bot-conversation">Cool, ' + secondAnswer + ' days for ' + firstAnswer + ' people.</p>');
+        $(".container-accommodation2").append('<p id="answer-text-two" class="bot-conversation">I\'m suggesting you to go for:</p>');
+});
+
 });
