@@ -23,7 +23,7 @@
     text-align:center;
 }
 .invert {
-  filter:invert();
+  filter:invert(1);
 }
 .container-body {
     height:100%;

@@ -730,7 +730,7 @@ function funct(e) {
 $(".container-empty-accommodation").addClass("container");
 $(".container-empty-accommodation").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble + '</span>');
 $(".container-empty-accommodation").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
-$(".container-empty-accommodation").append('<p class="bot-conversation">For how many people do you need the transport?</p>');
+$(".container-empty-accommodation").append('<p class="bot-conversation">For how many people do you need the accommodation?</p>');
 $(".container-empty-accommodation").append("<div id='btn-box2'>");
 $("#btn-box2").append('<button value="1" type="submit" class="button-accommodation" id="sendOne">1</button>');
 $("#btn-box2").append('<button value="2" type="submit" class="button-accommodation" id="sendOne">2</button>');
@@ -779,16 +779,247 @@ $(".button-accommodation").on('click', function() {
         $(".container-accommodation3").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
         $(".container-accommodation3").append('<p id="answer-text" class="bot-conversation">Cool, ' + secondAnswer + ' days for ' + firstAnswer + ' people.</p>');
         $(".container-accommodation3").append('<p id="answer-text-two" class="bot-conversation">I\'m suggesting you to go for:</p>');
+        
+        if (firstAnswer == 1) {
+            if (secondAnswer < 3) {
+                //MOTORBIKE
+                $(".container-accommodation4").addClass("container mt-2 text-center");
+                $(".container-accommodation4").append('<div class="image-left">');
+                $(".image-left").append('<img id="motorbike-one" src="img/motorbike-one.jpeg">');
+                $(".container-accommodation4").append('<div id="text-right">')
+                $("#text-right").append('<h3 id="header-text" style="margin:0">' + transport.Motorbike.name + '</h4>');
+                $("#text-right").append('<p id="p-1" style="margin:0">Price: $' + transport.Motorbike.Price + '/day</p>');
+                $("#text-right").append('<p id ="p-2" style="margin:0">Fuel: ' + transport.Motorbike.Fuel + '</p>');
+                $("#text-right").append('<button type="button" id="btn-hire">Hire</button>');
+                //MOTORBIKE
 
-        $(".container-accommodation4").addClass("container mt-2 text-center");
-        $(".container-accommodation4").append('<div class="image-left">');
-        $(".image-left").append('<img id="motorbike-one" src="img/motorbike-one.jpeg">');   
-        $(".container-accommodation4").append('<div id="text-right">')
-        $("#text-right").append('<h3 id="header-text" style="margin:0">' + transport.Motorbike.name + '</h4>');
-        $("#text-right").append('<p id="p-1" style="margin:0">Price: $' + transport.Motorbike.Price + '/day</p>');
-        $("#text-right").append('<p id ="p-2" style="margin:0">Fuel: ' + transport.Motorbike.Fuel + '</p>');
-        $("#text-right").append('<button type="button" id="btn-hire">Hire</button>');
+                //SMALL CAR
+                $(".container-accommodation5").addClass("container mt-2 text-center");
+                $(".container-accommodation5").append('<div class="image-left-two">');
+                $(".image-left-two").append('<img id="smallCar" src="img/smallcar.jpeg">');
+                $(".container-accommodation5").append('<div id="text-right-two">')
+                $("#text-right-two").append('<h3 id="header-text" style="margin:0">' + transport["Small Car"].name + '</h4>');
+                $("#text-right-two").append('<p id="p-1" style="margin:0">Price: $' + transport["Small Car"].Price + '/day</p>');
+                $("#text-right-two").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Small Car"].Fuel + '</p>');
+                $("#text-right-two").append('<button type="button" id="btn-hire">Hire</button>');
+                //SMALL CAR
+            } else if (secondAnswer >= 3 && secondAnswer <= 5) {
+                //MOTORBIKE
+                $(".container-accommodation4").addClass("container mt-2 text-center");
+                $(".container-accommodation4").append('<div class="image-left">');
+                $(".image-left").append('<img id="motorbike-one" src="img/motorbike-one.jpeg">');
+                $(".container-accommodation4").append('<div id="text-right">')
+                $("#text-right").append('<h3 id="header-text" style="margin:0">' + transport.Motorbike.name + '</h4>');
+                $("#text-right").append('<p id="p-1" style="margin:0">Price: $' + transport.Motorbike.Price + '/day</p>');
+                $("#text-right").append('<p id ="p-2" style="margin:0">Fuel: ' + transport.Motorbike.Fuel + '</p>');
+                $("#text-right").append('<button type="button" id="btn-hire">Hire</button>');
+                //MOTORBIKE
 
-});
+                //SMALL CAR
+                $(".container-accommodation5").addClass("container mt-2 text-center");
+                $(".container-accommodation5").append('<div class="image-left-two">');
+                $(".image-left-two").append('<img id="smallCar" src="img/smallcar.jpeg">');
+                $(".container-accommodation5").append('<div id="text-right-two">')
+                $("#text-right-two").append('<h3 id="header-text" style="margin:0">' + transport["Small Car"].name + '</h4>');
+                $("#text-right-two").append('<p id="p-1" style="margin:0">Price: $' + transport["Small Car"].Price + '/day</p>');
+                $("#text-right-two").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Small Car"].Fuel + '</p>');
+                $("#text-right-two").append('<button type="button" id="btn-hire">Hire</button>');
+                //SMALL CAR
+
+                //LARGE CAR
+                $(".container-accommodation6").addClass("container mt-2 text-center");
+                $(".container-accommodation6").append('<div class="image-left-three">');
+                $(".image-left-three").append('<img id="largeCar" src="img/largeCar.jpeg">');
+                $(".container-accommodation6").append('<div id="text-right-three">')
+                $("#text-right-three").append('<h3 id="header-text" style="margin:0">' + transport["Large Car"].name + '</h4>');
+                $("#text-right-three").append('<p id="p-1" style="margin:0">Price: $' + transport["Large Car"].Price + '/day</p>');
+                $("#text-right-three").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Large Car"].Fuel + '</p>');
+                $("#text-right-three").append('<button type="button" id="btn-hire">Hire</button>');
+                //LARGE CAR
+            } else if (secondAnswer > 5 && secondAnswer <= 10) {
+                //SMALL CAR
+                $(".container-accommodation5").addClass("container mt-2 text-center");
+                $(".container-accommodation5").append('<div class="image-left-two">');
+                $(".image-left-two").append('<img id="smallCar" src="img/smallcar.jpeg">');
+                $(".container-accommodation5").append('<div id="text-right-two">')
+                $("#text-right-two").append('<h3 id="header-text" style="margin:0">' + transport["Small Car"].name + '</h4>');
+                $("#text-right-two").append('<p id="p-1" style="margin:0">Price: $' + transport["Small Car"].Price + '/day</p>');
+                $("#text-right-two").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Small Car"].Fuel + '</p>');
+                $("#text-right-two").append('<button type="button" id="btn-hire">Hire</button>');
+                //SMALL CAR
+
+                //LARGE CAR
+                $(".container-accommodation6").addClass("container mt-2 text-center");
+                $(".container-accommodation6").append('<div class="image-left-three">');
+                $(".image-left-three").append('<img id="largeCar" src="img/largeCar.jpeg">');
+                $(".container-accommodation6").append('<div id="text-right-three">')
+                $("#text-right-three").append('<h3 id="header-text" style="margin:0">' + transport["Large Car"].name + '</h4>');
+                $("#text-right-three").append('<p id="p-1" style="margin:0">Price: $' + transport["Large Car"].Price + '/day</p>');
+                $("#text-right-three").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Large Car"].Fuel + '</p>');
+                $("#text-right-three").append('<button type="button" id="btn-hire">Hire</button>');
+                //LARGE CAR
+            } else {
+                var error = document.getElementById('answer-text');
+                error.innerHTML = "Oops, nothing was found.";
+                var errorTwo = document.getElementById('answer-text-two');
+                errorTwo.innerHTML = "Please, press the refresh button if you wish to search again.";
+            }
+            //FIRST ANSWER PEOPLE
+            // SECOND ANSWER DAYS
+        } else if (firstAnswer == 2) {
+            if (secondAnswer < 2) {
+                //SMALL CAR
+                $(".container-accommodation5").addClass("container mt-2 text-center");
+                $(".container-accommodation5").append('<div class="image-left-two">');
+                $(".image-left-two").append('<img id="smallCar" src="img/smallcar.jpeg">');
+                $(".container-accommodation5").append('<div id="text-right-two">')
+                $("#text-right-two").append('<h3 id="header-text" style="margin:0">' + transport["Small Car"].name + '</h4>');
+                $("#text-right-two").append('<p id="p-1" style="margin:0">Price: $' + transport["Small Car"].Price + '/day</p>');
+                $("#text-right-two").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Small Car"].Fuel + '</p>');
+                $("#text-right-two").append('<button type="button" id="btn-hire">Hire</button>');
+                //SMALL CAR
+            } else if (secondAnswer < 3) {
+                //SMALL CAR
+                $(".container-accommodation5").addClass("container mt-2 text-center");
+                $(".container-accommodation5").append('<div class="image-left-two">');
+                $(".image-left-two").append('<img id="smallCar" src="img/smallcar.jpeg">');
+                $(".container-accommodation5").append('<div id="text-right-two">')
+                $("#text-right-two").append('<h3 id="header-text" style="margin:0">' + transport["Small Car"].name + '</h4>');
+                $("#text-right-two").append('<p id="p-1" style="margin:0">Price: $' + transport["Small Car"].Price + '/day</p>');
+                $("#text-right-two").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Small Car"].Fuel + '</p>');
+                $("#text-right-two").append('<button type="button" id="btn-hire">Hire</button>');
+                //SMALL CAR
+
+                //MOTOR HOME
+                $(".container-accommodation7").addClass("container mt-2 text-center");
+                $(".container-accommodation7").append('<div class="image-left-four">');
+                $(".image-left-four").append('<img id="largeCar" src="img/motorhome.jpeg">');
+                $(".container-accommodation7").append('<div id="text-right-four">')
+                $("#text-right-four").append('<h3 id="header-text" style="margin:0">' + transport["Motor Home"].name + '</h4>');
+                $("#text-right-four").append('<p id="p-1" style="margin:0">Price: $' + transport["Motor Home"].Price + '/day</p>');
+                $("#text-right-four").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Motor Home"].Fuel + '</p>');
+                $("#text-right-four").append('<button type="button" id="btn-hire">Hire</button>');
+            } else if (secondAnswer > 2 && secondAnswer <= 10) {
+                //SMALL CAR
+                $(".container-accommodation5").addClass("container mt-2 text-center");
+                $(".container-accommodation5").append('<div class="image-left-two">');
+                $(".image-left-two").append('<img id="smallCar" src="img/smallcar.jpeg">');
+                $(".container-accommodation5").append('<div id="text-right-two">')
+                $("#text-right-two").append('<h3 id="header-text" style="margin:0">' + transport["Small Car"].name + '</h4>');
+                $("#text-right-two").append('<p id="p-1" style="margin:0">Price: $' + transport["Small Car"].Price + '/day</p>');
+                $("#text-right-two").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Small Car"].Fuel + '</p>');
+                $("#text-right-two").append('<button type="button" id="btn-hire">Hire</button>');
+                //SMALL CAR
+
+                //LARGE CAR
+                $(".container-accommodation6").addClass("container mt-2 text-center");
+                $(".container-accommodation6").append('<div class="image-left-three">');
+                $(".image-left-three").append('<img id="largeCar" src="img/largeCar.jpeg">');
+                $(".container-accommodation6").append('<div id="text-right-three">')
+                $("#text-right-three").append('<h3 id="header-text" style="margin:0">' + transport["Large Car"].name + '</h4>');
+                $("#text-right-three").append('<p id="p-1" style="margin:0">Price: $' + transport["Large Car"].Price + '/day</p>');
+                $("#text-right-three").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Large Car"].Fuel + '</p>');
+                $("#text-right-three").append('<button type="button" id="btn-hire">Hire</button>');
+                //LARGE CAR
+
+                //MOTOR HOME
+                $(".container-accommodation7").addClass("container mt-2 text-center");
+                $(".container-accommodation7").append('<div class="image-left-four">');
+                $(".image-left-four").append('<img id="largeCar" src="img/motorhome.jpeg">');
+                $(".container-accommodation7").append('<div id="text-right-four">')
+                $("#text-right-four").append('<h3 id="header-text" style="margin:0">' + transport["Motor Home"].name + '</h4>');
+                $("#text-right-four").append('<p id="p-1" style="margin:0">Price: $' + transport["Motor Home"].Price + '/day</p>');
+                $("#text-right-four").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Motor Home"].Fuel + '</p>');
+                $("#text-right-four").append('<button type="button" id="btn-hire">Hire</button>');
+            } else if (secondAnswer > 10) {
+                //MOTOR HOME
+                $(".container-accommodation7").addClass("container mt-2 text-center");
+                $(".container-accommodation7").append('<div class="image-left-four">');
+                $(".image-left-four").append('<img id="largeCar" src="img/motorhome.jpeg">');
+                $(".container-accommodation7").append('<div id="text-right-four">')
+                $("#text-right-four").append('<h3 id="header-text" style="margin:0">' + transport["Motor Home"].name + '</h4>');
+                $("#text-right-four").append('<p id="p-1" style="margin:0">Price: $' + transport["Motor Home"].Price + '/day</p>');
+                $("#text-right-four").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Motor Home"].Fuel + '</p>');
+                $("#text-right-four").append('<button type="button" id="btn-hire">Hire</button>');
+            } else {
+                var error = document.getElementById('answer-text');
+                error.innerHTML = "Oops, nothing was found.";
+                var errorTwo = document.getElementById('answer-text-two');
+                errorTwo.innerHTML = "Please, press the refresh button if you wish to search again.";
+            }
+        } else if (firstAnswer > 2 && firstAnswer < 6) {
+            if (secondAnswer < 2) {
+                var error = document.getElementById('answer-text');
+                error.innerHTML = "Oops, nothing was found.";
+                var errorTwo = document.getElementById('answer-text-two');
+                errorTwo.innerHTML = "Please, press the refresh button if you wish to search again.";
+            } else if (secondAnswer == 2) {
+                //MOTOR HOME
+                $(".container-accommodation7").addClass("container mt-2 text-center");
+                $(".container-accommodation7").append('<div class="image-left-four">');
+                $(".image-left-four").append('<img id="largeCar" src="img/motorhome.jpeg">');
+                $(".container-accommodation7").append('<div id="text-right-four">')
+                $("#text-right-four").append('<h3 id="header-text" style="margin:0">' + transport["Motor Home"].name + '</h4>');
+                $("#text-right-four").append('<p id="p-1" style="margin:0">Price: $' + transport["Motor Home"].Price + '/day</p>');
+                $("#text-right-four").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Motor Home"].Fuel + '</p>');
+                $("#text-right-four").append('<button type="button" id="btn-hire">Hire</button>');
+            } else if (secondAnswer > 2 && secondAnswer <= 10) {
+
+                //LARGE CAR
+                $(".container-accommodation6").addClass("container mt-2 text-center");
+                $(".container-accommodation6").append('<div class="image-left-three">');
+                $(".image-left-three").append('<img id="largeCar" src="img/largeCar.jpeg">');
+                $(".container-accommodation6").append('<div id="text-right-three">')
+                $("#text-right-three").append('<h3 id="header-text" style="margin:0">' + transport["Large Car"].name + '</h4>');
+                $("#text-right-three").append('<p id="p-1" style="margin:0">Price: $' + transport["Large Car"].Price + '/day</p>');
+                $("#text-right-three").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Large Car"].Fuel + '</p>');
+                $("#text-right-three").append('<button type="button" id="btn-hire">Hire</button>');
+                //LARGE CAR
+
+                //MOTOR HOME
+                $(".container-accommodation7").addClass("container mt-2 text-center");
+                $(".container-accommodation7").append('<div class="image-left-four">');
+                $(".image-left-four").append('<img id="largeCar" src="img/motorhome.jpeg">');
+                $(".container-accommodation7").append('<div id="text-right-four">')
+                $("#text-right-four").append('<h3 id="header-text" style="margin:0">' + transport["Motor Home"].name + '</h4>');
+                $("#text-right-four").append('<p id="p-1" style="margin:0">Price: $' + transport["Motor Home"].Price + '/day</p>');
+                $("#text-right-four").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Motor Home"].Fuel + '</p>');
+                $("#text-right-four").append('<button type="button" id="btn-hire">Hire</button>');
+            } else if (secondAnswer > 10) {
+                //MOTOR HOME
+                $(".container-accommodation7").addClass("container mt-2 text-center");
+                $(".container-accommodation7").append('<div class="image-left-four">');
+                $(".image-left-four").append('<img id="largeCar" src="img/motorhome.jpeg">');
+                $(".container-accommodation7").append('<div id="text-right-four">')
+                $("#text-right-four").append('<h3 id="header-text" style="margin:0">' + transport["Motor Home"].name + '</h4>');
+                $("#text-right-four").append('<p id="p-1" style="margin:0">Price: $' + transport["Motor Home"].Price + '/day</p>');
+                $("#text-right-four").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Motor Home"].Fuel + '</p>');
+                $("#text-right-four").append('<button type="button" id="btn-hire">Hire</button>');
+            } else {
+                var error = document.getElementById('answer-text');
+                error.innerHTML = "Oops, nothing was found.";
+                var errorTwo = document.getElementById('answer-text-two');
+                errorTwo.innerHTML = "Please, press the refresh button if you wish to search again.";
+            }
+        } else if (firstAnswer > 5 && secondAnswer > 1) {
+            //MOTOR HOME
+            $(".container-accommodation7").addClass("container mt-2 text-center");
+            $(".container-accommodation7").append('<div class="image-left-four">');
+            $(".image-left-four").append('<img id="largeCar" src="img/motorhome.jpeg">');
+            $(".container-accommodation7").append('<div id="text-right-four">')
+            $("#text-right-four").append('<h3 id="header-text" style="margin:0">' + transport["Motor Home"].name + '</h4>');
+            $("#text-right-four").append('<p id="p-1" style="margin:0">Price: $' + transport["Motor Home"].Price + '/day</p>');
+            $("#text-right-four").append('<p id="p-2" style="margin:0">Fuel: ' + transport["Motor Home"].Fuel + '</p>');
+            $("#text-right-four").append('<button type="button" id="btn-hire">Hire</button>');
+        } else {
+            var error = document.getElementById('answer-text');
+            error.innerHTML = "Oops, nothing was found.";
+            var errorTwo = document.getElementById('answer-text-two');
+            errorTwo.innerHTML = "Please, press the refresh button if you wish to search again.";
+        }
+
+
+    });        
+
 
 });
