@@ -86,6 +86,12 @@ var seconds = d.getSeconds();
 
 //First Statement
 
+$(".container-name").addClass("container");
+$(".container-name").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble + '</span>');
+$(".container-name").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
+$(".container-name").append('<p class="bot-conversation">Hi there! What\'s your name?</p>');
+$(".container-name").append('<input type="text">');
+
 $(".container-empty").addClass("container");
 $(".container-empty").append('<span class="time-right">Sent ' + hours + ':' + minutesDouble + '</span>');
 $(".container-empty").append("<img src='img/nzlogo.png' class='invert' alt='Avatar' style='width:100%;'>");
