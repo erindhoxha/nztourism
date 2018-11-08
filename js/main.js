@@ -142,6 +142,7 @@ function funct(e) {
 
     $("#btn-submit").on('click', function() {
         secondAnswer = parseInt(document.getElementById('p-text').innerHTML)
+        transport.Motorbike.Total = transport.Motorbike.Price * secondAnswer;
         $("#btn-submit").hide(300);
         $("#myRange").hide(300);
         $(".container-empty-three").addClass("container mt-2");
@@ -161,7 +162,7 @@ function funct(e) {
                     $(".image-left").append('<img id="motorbike-one" src="img/motorbike-one.jpeg">');   
                     $(".container-empty-four").append('<div id="text-right">')
                     $("#text-right").append('<h3 id="header-text" style="margin:0">' + transport.Motorbike.name + '</h4>');
-                    $("#text-right").append('<p id="p-1" style="margin:0">Price: $' + transport.Motorbike.Price + '/day</p>');
+                    $("#text-right").append('<p id="p-1" style="margin:0">Price: $' + transport.Motorbike.Total + ' (' + transport.Motorbike.Price + '/day)</p>');
                     $("#text-right").append('<p id ="p-2" style="margin:0">Fuel: ' + transport.Motorbike.Fuel + '</p>');
                     $("#text-right").append('<button type="button" id="btn-hire">Hire</button>');
                     //MOTORBIKE
